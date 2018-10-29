@@ -9,4 +9,4 @@ Resources:
         Ref: RatingDb
       Targets:
         S3Targets:
-          - Path: channelrating
+          - Path: ${self:custom.tvDataS3Bucket}

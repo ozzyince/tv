@@ -3,6 +3,7 @@ app: tvx
 tenant: ozzyince
 custom:
   stage: ${opt:stage, self:provider.stage}
+  environment: ${file(env.yml):${self:custom.stage}, file(env.yml):default}
 provider:
   name: aws
   runtime: nodejs8.10
