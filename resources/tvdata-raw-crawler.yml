@@ -1,0 +1,12 @@
+Resources:
+  TvDataRawCrawler:
+    Type: AWS::Glue::Crawler
+    Properties:
+      Name: ${self:custom.stage}-tvdata-raw-crawler
+      Role:
+        Fn::GetAtt: [RatingRole, Arn]
+      DatabaseName:
+        Ref: RatingDb
+      Targets:
+        S3Targets:
+          - Path: channelrating

@@ -1,0 +1,15 @@
+Resources:
+  RatingRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: AWSGlueServiceRole-${self:custom.stage}-rating
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          -
+            Effect: "Allow"
+            Principal:
+              Service:
+                - "glue.amazonaws.com"
+            Action:
+              - "sts:AssumeRole"
