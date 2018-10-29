@@ -103,3 +103,7 @@ functions:
 #     NewOutput:
 #       Description: "Description for the output"
 #       Value: "Some output value"
+resources:
+  - ${file(resources/rating-role.yml)}
+  - ${file(resources/rating-db.yml)}
+  - ${file(resources/tvdata-raw-crawler.yml)}
