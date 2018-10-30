@@ -92,3 +92,4 @@ resources:
   - ${file(resources/tvdata-raw-crawler.yml)}
   - ${file(resources/cognito-user-pool.yml)}
   - ${file(resources/cognito-identity-pool.yml)}
+  - ${file(resources/cognito-auth-role.yml)}
