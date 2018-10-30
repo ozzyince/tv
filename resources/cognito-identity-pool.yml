@@ -20,6 +20,7 @@ Resources:
           Fn::GetAtt: [ CognitoAuthRole, Arn ]
       RoleMappings:
         Type: Token
+        AmbiguousRoleResolution: Deny
 
 Outputs:
   IdentityPoolId:
