@@ -20,7 +20,7 @@ Resources:
           Fn::GetAtt: [ CognitoAuthRole, Arn ]
       RoleMappings:
         Type: Rules
-        AmbiguousRoleResolution: DENY
+        AmbiguousRoleResolution: Deny
         RulesConfiguration:
           Rules:
             - Claim: admin
