@@ -28,14 +28,14 @@ Resources:
             Value: viewer
             RoleARN:
               Fn::GetAtt:
-              - ViewerRole
+              - CognitoAuthRole
               - Arn
           - Claim: custom:role
             MatchType: Equals
             Value: editor
             RoleARN:
               Fn::GetAtt:
-              - EditorRole
+              - CognitoAuthRole
               - Arn
 
 Outputs:
