@@ -18,6 +18,8 @@ Resources:
       Roles:
         authenticated:
           Fn::GetAtt: [ CognitoAuthRole, Arn ]
+        unauthenticated:
+          Fn::GetAtt: [ CognitoAuthRole, Arn ]
 
 Outputs:
   IdentityPoolId:
