@@ -26,7 +26,8 @@ Resources:
             - Claim: admin
               Value: "true"
               MatchType: Equals
-              RoleARN: [ CognitoAuthRole, Arn ]
+              RoleARN:
+                Fn::GetAtt: [ CognitoAuthRole, Arn ]
 
 Outputs:
   IdentityPoolId:
