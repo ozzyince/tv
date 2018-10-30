@@ -2,7 +2,7 @@ Resources:
   CognitoIdentityPool:
     Type: AWS::Cognito::IdentityPool
     Properties:
-      IdentityPoolName: Rating${self:custom.stage}IdentityPool
+      IdentityPoolName: Rating${self:custom.stage}IdentityPoola
       AllowUnauthenticatedIdentities: true
       CognitoIdentityProviders:
         - ClientId:
