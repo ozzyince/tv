@@ -2,7 +2,6 @@ Resources:
   CognitoAuthRole:
     Type: AWS::IAM::Role
     Properties:
-      RoleName: CognitoAuthRole-${self:custom.stage}-tv
       AssumeRolePolicyDocument:
         Version: "2012-10-17"
         Statement:

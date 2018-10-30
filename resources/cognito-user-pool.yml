@@ -2,7 +2,6 @@ Resources:
   CognitoUserPool:
     Type: AWS::Cognito::UserPool
     Properties:
-      UserPoolName: rating-${self:custom.stage}-user-pool
       UsernameAttributes:
         - email
       AutoVerifiedAttributes:
@@ -11,7 +10,6 @@ Resources:
   CognitoUserPoolClient:
     Type: AWS::Cognito::UserPoolClient
     Properties:
-      ClientName: rating-${self:custom.stage}-user-pool-client
       UserPoolId:
         Ref: CognitoUserPool
       ExplicitAuthFlows:
