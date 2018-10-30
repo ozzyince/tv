@@ -19,7 +19,7 @@ Resources:
         authenticated:
           Fn::GetAtt: [ CognitoAuthRole, Arn ]
       RoleMappings:
-        Type: Rules
+        Type: Token
 
 Outputs:
   IdentityPoolId:
