@@ -3,6 +3,9 @@ app: tvx
 tenant: ozzyince
 custom:
   stage: ${opt:stage, self:provider.stage}
+  tvDataS3Bucket:
+    prod: channelrating
+    dev: channelrating
   environment: ${file(env.yml):${self:custom.stage}, file(env.yml):default}
 provider:
   name: aws
@@ -25,10 +28,6 @@ provider:
 #          - - "arn:aws:s3:::"
 #            - "Ref" : "ServerlessDeploymentBucket"
 #            - "/*"
-
-# you can define service wide environment variables here
-#  environment:
-#    variable1: value1
 
 # you can add packaging information here
 #package:

@@ -9,4 +9,4 @@ Resources:
         Ref: RatingDb
       Targets:
         S3Targets:
-          - Path: ${self:custom.tvDataS3Bucket}
+          - Path: ${self:custom.tvDataS3Bucket.${self:stage}}
