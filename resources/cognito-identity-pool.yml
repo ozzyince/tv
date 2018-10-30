@@ -18,9 +18,25 @@ Resources:
       Roles:
         authenticated:
           Fn::GetAtt: [ CognitoAuthRole, Arn ]
-      RoleMappings:
-        Type: Token
+      RoleMapping:
         AmbiguousRoleResolution: Deny
+        Type: Rules
+        RulesConfiguration:
+          Rules:
+          - Claim: custom:role
+            MatchType: Equals
+            Value: viewer
+            RoleARN:
+              Fn::GetAtt:
+              - ViewerRole
+              - Arn
+          - Claim: custom:role
+            MatchType: Equals
+            Value: editor
+            RoleARN:
+              Fn::GetAtt:
+              - EditorRole
+              - Arn
 
 Outputs:
   IdentityPoolId:
