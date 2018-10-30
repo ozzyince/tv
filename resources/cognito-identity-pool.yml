@@ -18,6 +18,15 @@ Resources:
       Roles:
         authenticated:
           Fn::GetAtt: [ CognitoAuthRole, Arn ]
+      RoleMappings:
+        Type: Rules
+        AmbiguousRoleResolution: DENY
+        RulesConfiguration:
+          Rules:
+            - Claim: admin
+              Value: "true"
+              MatchType: Equals
+              RoleARN: [ CognitoAuthRole, Arn ]
 
 Outputs:
   IdentityPoolId:
