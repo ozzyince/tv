@@ -10,6 +10,17 @@ Resources:
           ProviderName:
             Fn::GetAtt: [ CognitoUserPool, ProviderName ]
 
+  CognitoIdentityPoolRoles:
+    Type: AWS::Cognito::IdentityPoolRoleAttachment
+    Properties:
+      IdentityPoolId:
+        Ref: CognitoIdentityPool
+      Roles:
+        authenticated:
+          Fn::GetAtt: [ CognitoAuthRole, Arn ]
+        unauthenticated:
+          Fn::GetAtt: [ CognitoAuthRole, Arn ]
+
 Outputs:
   IdentityPoolId:
     Value:
