@@ -10,7 +10,7 @@ Resources:
           ProviderName:
             Fn::GetAtt: [ "CognitoUserPool", "ProviderName" ]
 
-  CognitoIdentityPoolRoles1:
+  CognitoIdentityPoolRoles2:
     Type: AWS::Cognito::IdentityPoolRoleAttachment
     Properties:
       IdentityPoolId:
@@ -24,7 +24,7 @@ Resources:
         RulesConfiguration:
           Rules:
             - Claim: admin
-              Value: "true"
+              Value: true
               MatchType: Equals
               RoleARN:
                 Fn::GetAtt: [ CognitoAuthRole, Arn ]
