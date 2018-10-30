@@ -2,30 +2,13 @@ Resources:
   CognitoIdentityPool:
     Type: AWS::Cognito::IdentityPool
     Properties:
+      IdentityPoolName: Rating${self:custom.stage}IdentityPool
       AllowUnauthenticatedIdentities: true
       CognitoIdentityProviders:
         - ClientId:
             Ref: CognitoUserPoolClient
           ProviderName:
             Fn::GetAtt: [ "CognitoUserPool", "ProviderName" ]
-
-  CognitoIdentityPoolRoles:
-    Type: AWS::Cognito::IdentityPoolRoleAttachment
-    Properties:
-      IdentityPoolId:
-        Ref: CognitoIdentityPool
-      Roles:
-        authenticated:
-          Fn::GetAtt: [ CognitoAuthRole, Arn ]
-      RoleMappings:
-        Type: Rules
-        AmbiguousRoleResolution: DENY
-        RulesConfiguration:
-          Rules:
-            - Claim: admin
-              Value: "true"
-              MatchType: Equals
-              RoleARN: [ CognitoAuthRole, Arn ]
 
 Outputs:
   IdentityPoolId:
