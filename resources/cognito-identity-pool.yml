@@ -27,16 +27,12 @@ Resources:
             MatchType: Equals
             Value: viewer
             RoleARN:
-              Fn::GetAtt:
-              - CognitoAuthRole
-              - Arn
+              Fn::GetAtt: [ CognitoAuthRole, Arn ]
           - Claim: custom:role
             MatchType: Equals
             Value: editor
             RoleARN:
-              Fn::GetAtt:
-              - CognitoAuthRole
-              - Arn
+              Fn::GetAtt: [ CognitoAuthRole, Arn ]
 
 Outputs:
   IdentityPoolId:
