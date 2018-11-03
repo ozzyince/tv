@@ -18,7 +18,7 @@ Resources:
       Roles:
         authenticated:
           Fn::GetAtt: [ CognitoAuthRole, Arn ]
-      RoleMapping:
+      RoleMappings:
         AmbiguousRoleResolution: Deny
         Type: Rules
         RulesConfiguration:
